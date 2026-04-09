@@ -10,6 +10,11 @@ import TableRow from "@tiptap/extension-table-row";
 import ImageResize from "tiptap-extension-resize-image";
 import Image from "@tiptap/extension-image";
 import { useEditorStore } from "@/store/use-editor-store";
+import FontFamily from "@tiptap/extension-font-family";
+import { Color } from "@tiptap/extension-color";
+import HighLight from "@tiptap/extension-highlight";
+import TextStyle from "@tiptap/extension-text-style";
+
 import Underline from "@tiptap/extension-underline";
 
 import StarterKit from "@tiptap/starter-kit";
@@ -59,6 +64,10 @@ export const Editor = () => {
     },
     extensions: [
       StarterKit,
+      Color,
+      HighLight.configure({
+        multicolor: true,
+      }),
       Table,
       TableCell,
       TableHeader,
@@ -66,6 +75,8 @@ export const Editor = () => {
       Image,
       ImageResize,
       Underline,
+      FontFamily,
+      TextStyle,
       TaskItem.configure({
         nested: true,
       }),
