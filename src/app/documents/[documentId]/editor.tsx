@@ -13,6 +13,7 @@ import { useEditorStore } from "@/store/use-editor-store";
 import FontFamily from "@tiptap/extension-font-family";
 import { Color } from "@tiptap/extension-color";
 import HighLight from "@tiptap/extension-highlight";
+import Link from "@tiptap/extension-link";
 import TextStyle from "@tiptap/extension-text-style";
 
 import Underline from "@tiptap/extension-underline";
@@ -77,6 +78,14 @@ export const Editor = () => {
       Underline,
       FontFamily,
       TextStyle,
+      Link.configure({
+        openOnClick: false,
+        autolink: true,
+        defaultProtocol: "https",
+        HTMLAttributes: {
+          class: "underline text-blue-600 cursor-pointer",
+        },
+      }),
       TaskItem.configure({
         nested: true,
       }),

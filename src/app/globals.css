@@ -80,7 +80,7 @@ body {
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border; 
   }
   body {
     @apply bg-background text-foreground;
@@ -88,8 +88,17 @@ body {
 }
 
 .tiptap {
-  /* Image spcific styling */
+  /* Link styles */
+  a {
+    @apply text-blue-600 !important;
+    cursor: pointer;
 
+    &:hover {
+      @apply underline !important;
+    }
+  }
+
+  /* Image spcific styling */
   img {
     display: block;
     height: auto;
